@@ -1,6 +1,5 @@
 import { Hono } from 'hono';
 import { cors } from 'hono/cors';
-import { config } from 'dotenv';
 import { rateLimiter } from 'hono-rate-limiter';
 import { swaggerUI } from '@hono/swagger-ui';
 
@@ -11,9 +10,23 @@ import { fail } from './utils/response.js';
 import hianimeApiDocs from './utils/swaggerUi.js';
 import { logger } from 'hono/logger';
 
-const app = new Hono();
+// Load dotenv for local development (optional)
+// In Cloudflare Workers, env vars come from wrangler.toml or dashboard
+// With nodejs_compat, process.env works in Workers
+// Using a non-blocking pattern for better compatibility
+if (typeof process !== 'undefined' && process.env) {
+  // Try to load dotenv asynchronously without blocking
+  import('dotenv')
+    .then((dotenv) => {
+      dotenv.config();
+    })
+    .catch(() => {
+      // dotenv not available or not needed (Cloudflare Workers)
+      // This is expected in Workers environment
+    });
+}
 
-config();
+const app = new Hono();
 
 const origins = process.env.ORIGIN ? process.env.ORIGIN.split(',') : '*';
 

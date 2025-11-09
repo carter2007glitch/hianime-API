@@ -1,0 +1,40 @@
+name = "hianime-api"
+main = "src/worker.js"
+compatibility_date = "2024-01-01"
+compatibility_flags = ["nodejs_compat"]
+
+# Workers CPU time limit (optional)
+# Free tier: 10ms CPU time per request (default, cannot be changed)
+# Paid tiers: Can increase up to 50ms+ CPU time per request
+# Uncomment and adjust if you're on a paid plan:
+# [limits]
+# cpu_ms = 50
+
+# Environment variables
+# Set these via: wrangler secret put <KEY>
+# Or in Cloudflare Dashboard: Workers & Pages > Your Worker > Settings > Variables
+# Examples:
+# wrangler secret put ORIGIN
+# wrangler secret put RATE_LIMIT_WINDOW_MS
+# wrangler secret put RATE_LIMIT_LIMIT
+# wrangler secret put UPSTASH_REDIS_REST_URL
+# wrangler secret put UPSTASH_REDIS_REST_TOKEN
+
+# Optional: Define public environment variables (less secure, visible in code)
+# [vars]
+# ORIGIN = "*"
+# RATE_LIMIT_WINDOW_MS = "60000"
+# RATE_LIMIT_LIMIT = "100"
+
+# Route configuration (optional - configure via dashboard for custom domains)
+# routes = [
+#   { pattern = "api.yourdomain.com/*", zone_name = "yourdomain.com" }
+# ]
+
+# Build configuration
+# Cloudflare Workers will automatically bundle your code
+# Note: Some Node.js-specific packages may not work (like sharp, node-cache)
+# Check Cloudflare Workers compatibility for each dependency
+[build]
+# command = "npm install"  # Uncomment if you need custom build steps
+

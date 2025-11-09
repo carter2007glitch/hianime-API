@@ -20,7 +20,10 @@
     "dev:pm2": "pm2 start --interpreter ~/.bun/bin/bun index.js",
     "dev:stop": "pm2 stop all",
     "start": "bun index.js",
-    "test": "vitest"
+    "test": "vitest",
+    "deploy:worker": "wrangler deploy",
+    "dev:worker": "wrangler dev",
+    "tail:worker": "wrangler tail"
   },
   "dependencies": {
     "@hono/swagger-ui": "^0.5.2",
@@ -48,6 +51,7 @@
     "globals": "^16.1.0",
     "husky": "^9.1.7",
     "lint-staged": "^16.1.2",
-    "prettier": "^3.5.3"
+    "prettier": "^3.5.3",
+    "wrangler": "^3.0.0"
   }
 }
