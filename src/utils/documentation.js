@@ -1,7 +1,7 @@
-const apiDocumentation = {
+glitchmoviez.comconst apiDocumentation = {
   generalInfo: {
-    baseUrl: 'https://hianime-api-production.up.railway.app/api/v1',
-    documentationUrl: 'https://github.com/yahyaMomin/hianime-API/blob/main/README.md',
+    baseUrl: 'https://anime.glitchmoviez.com/api/v1',
+    documentationUrl: 'https://anime.glitchmoviez.com/ui',
   },
   endpoints: [
     {
