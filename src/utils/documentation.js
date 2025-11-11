@@ -1,4 +1,4 @@
-glitchmoviez.comconst apiDocumentation = {
+const apiDocumentation = {
   generalInfo: {
     baseUrl: 'https://anime.glitchmoviez.com/api/v1',
     documentationUrl: 'https://anime.glitchmoviez.com/ui',
