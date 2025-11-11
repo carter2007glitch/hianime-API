@@ -1,11 +1,11 @@
-const base_url = process.env.BASE_URL ? process.env.BASE_URL : 'http://localhost:3030';
+const base_url = process.env.BASE_URL ? process.env.BASE_URL : 'https://anime.glitchmoviez.com';
 
 const hianimeApiDocs = {
   openapi: '3.0.0',
   info: {
-    title: 'HiAnime API Documentation',
+    title: 'Glitch Anime API Documentation',
     version: '1.0.0',
-    description: 'API documentation for HiAnime content endpoints',
+    description: 'API documentation for Glitch Anime content endpoints',
   },
   servers: [
     {
